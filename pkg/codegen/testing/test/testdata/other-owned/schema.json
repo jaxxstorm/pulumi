@@ -2,6 +2,7 @@
   "version": "0.0.1",
   "name": "example",
   "publisher": "!Other Corp!",
+  "author": "!Someone Else!",
   "allowedPackageNames": ["foo", "bar"],
   "pluginDownloadURL": "example.com/download",
   "types": {

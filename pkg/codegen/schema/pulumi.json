@@ -55,7 +55,11 @@
             "type": "string"
         },
         "publisher": {
-            "description": "The name of the person or organization that authored and published the package.",
+            "description": "The name of the person or organization that published the package.",
+            "type": "string"
+        },
+        "author": {
+            "description": "The name of the person or organization that authored the package.",
             "type": "string"
         },
         "meta": {

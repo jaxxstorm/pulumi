@@ -607,8 +607,10 @@ type Package struct {
 	LogoURL string
 	// PluginDownloadURL is the URL to use to acquire the provider plugin binary, if any.
 	PluginDownloadURL string
-	// Publisher is the name of the person or organization that authored and published the package.
+	// Publisher is the name of the person or organization that published the package.
 	Publisher string
+	// Author is the name of the person or organization that authored the package.
+	Author string
 
 	// Types is the list of non-resource types defined by the package.
 	Types []Type
@@ -1567,8 +1569,10 @@ type PackageInfoSpec struct {
 	LogoURL string `json:"logoUrl,omitempty" yaml:"logoUrl,omitempty"`
 	// PluginDownloadURL is the URL to use to acquire the provider plugin binary, if any.
 	PluginDownloadURL string `json:"pluginDownloadURL,omitempty" yaml:"pluginDownloadURL,omitempty"`
-	// Publisher is the name of the person or organization that authored and published the package.
+	// Publisher is the name of the person or organization and published the package.
 	Publisher string `json:"publisher,omitempty" yaml:"publisher,omitempty"`
+	// Author is the name of the person or organization that authored the package.
+	Author string `json:"author,omitempty" yaml:"author,omitempty"`
 
 	// Meta contains information for the importer about this package.
 	Meta *MetadataSpec `json:"meta,omitempty" yaml:"meta,omitempty"`
@@ -1612,6 +1616,8 @@ type PackageSpec struct {
 	PluginDownloadURL string `json:"pluginDownloadURL,omitempty" yaml:"pluginDownloadURL,omitempty"`
 	// Publisher is the name of the person or organization that authored and published the package.
 	Publisher string `json:"publisher,omitempty" yaml:"publisher,omitempty"`
+	// Author is the name of the person or organization that published the package.
+	Author string `json:"author,omitempty" yaml:"author,omitempty"`
 
 	// Meta contains information for the importer about this package.
 	Meta *MetadataSpec `json:"meta,omitempty" yaml:"meta,omitempty"`
@@ -1649,6 +1655,7 @@ func (p *PackageSpec) Info() PackageInfoSpec {
 		LogoURL:             p.LogoURL,
 		PluginDownloadURL:   p.PluginDownloadURL,
 		Publisher:           p.Publisher,
+		Author: 			 p.Author,
 		Meta:                p.Meta,
 		AllowedPackageNames: p.AllowedPackageNames,
 		Language:            p.Language,
